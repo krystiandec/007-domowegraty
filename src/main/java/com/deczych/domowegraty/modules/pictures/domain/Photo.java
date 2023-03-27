@@ -1,4 +1,4 @@
-package com.deczych.domowegraty.modules.pictures;
+package com.deczych.domowegraty.modules.pictures.domain;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
@@ -22,7 +22,7 @@ public class Photo {
 
     @Column(nullable = false)
     Instant creationTime;
-
     @Column(nullable = false)
     String patch;
+
 }

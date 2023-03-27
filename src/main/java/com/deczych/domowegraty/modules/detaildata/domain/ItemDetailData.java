@@ -1,25 +1,24 @@
-package com.deczych.domowegraty.modules;
+package com.deczych.domowegraty.modules.detaildata.domain;
 
-import com.deczych.domowegraty.modules.pictures.Photo;
+import com.deczych.domowegraty.modules.pictures.domain.Photo;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 
-
-
+@Entity
 @Getter
 @Setter
+@Builder
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@MappedSuperclass
-public abstract class ItemBO {
+public class ItemDetailData {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
@@ -33,9 +32,14 @@ public abstract class ItemBO {
     @Column(nullable = false)
     Instant creationDate;
 
-
-
     @OneToMany(cascade = CascadeType.ALL)
     List<Photo> addressesToImages;
+
+    String shortDescription;
+    String longDescription;
+    Instant modyficationDate;
+
+
+    //todo zrobic category jako klase i pole tutaj - kategorie moze okrteslac administrator
 
 }
