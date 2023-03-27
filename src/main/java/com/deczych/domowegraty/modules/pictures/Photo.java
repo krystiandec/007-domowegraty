@@ -1,7 +1,5 @@
 package com.deczych.domowegraty.modules.pictures;
 
-
-import com.deczych.domowegraty.modules.ItemBO;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.*;
@@ -21,7 +19,7 @@ public class Photo {
     @Column(name = "id", nullable = false)
     Long id;
 
-    @Nonnull
+    @Column(nullable = false)
     Instant creationTime;
 
 }
