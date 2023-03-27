@@ -10,6 +10,7 @@ import java.time.Instant;
 @Entity
 @Setter
 @Getter
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
@@ -22,5 +23,6 @@ public class Photo {
     @Column(nullable = false)
     Instant creationTime;
 
-
+    @Column(nullable = false)
+    String patch;
 }
