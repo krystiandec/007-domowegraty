@@ -22,4 +22,5 @@ public class Photo {
     @Column(nullable = false)
     Instant creationTime;
 
+
 }
