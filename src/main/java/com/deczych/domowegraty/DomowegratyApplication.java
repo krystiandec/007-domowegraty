@@ -8,6 +8,7 @@ public class DomowegratyApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DomowegratyApplication.class, args);
+
     }
 
 }
