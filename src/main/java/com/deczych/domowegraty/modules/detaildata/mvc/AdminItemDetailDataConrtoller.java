@@ -18,7 +18,7 @@ public class AdminItemDetailDataConrtoller {
 
     ItemDetailDataApi itemDetailDataApi;
 
-    @PostMapping("getAllItems")
+    @PostMapping("saveItem")
         //todo: swagger do zrobienia
     ResponseEntity<?> saveItem(
 //            Pageable pageable,
