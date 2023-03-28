@@ -18,6 +18,7 @@ public class ItemDetailDataApi {
     public ItemDataCreatedDTO addItemToDB(ItemDataCreateDTO itemDataCreateDTO) {
         //todo important is that we have to check does bardoce exist. if yes 403(fobidden)
         //todo second task is check first does
+        System.out.println(String.format("Jestem z %s:\n%s",this.getClass().getName(),itemDataCreateDTO.toString()));
         return adminItemDetailDataManagerService.addNewEntery(itemDataCreateDTO);
     }
 }
