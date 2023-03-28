@@ -31,13 +31,14 @@ public class ItemDetailData {
     BigDecimal weight;
     @Column(nullable = false)
     Instant creationDate;
+    Instant modyficationDate;
 
     @OneToMany(cascade = CascadeType.ALL)
     List<Photo> addressesToImages;
 
     String shortDescription;
     String longDescription;
-    Instant modyficationDate;
+
 
 
     //todo zrobic category jako klase i pole tutaj - kategorie moze okrteslac administrator

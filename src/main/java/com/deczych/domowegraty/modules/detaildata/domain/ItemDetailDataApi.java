@@ -1,6 +1,7 @@
 package com.deczych.domowegraty.modules.detaildata.domain;
 
-import com.deczych.domowegraty.modules.detaildata.dto.ItemDataDTO;
+import com.deczych.domowegraty.modules.detaildata.dto.ItemDataCreatedDTO;
+import com.deczych.domowegraty.modules.detaildata.dto.ItemDataCreateDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
@@ -10,13 +11,13 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 public class ItemDetailDataApi {
 
-    ItemDetailDataService itemDetailDataService;
+    AdminItemDetailDataManagerService adminItemDetailDataManagerService;
+    //todo 2 servis to schecking if is something attached. and add new photos in disk.
 
 
-    public ItemDataDTO addItemToDB(ItemDataDTO itemDataDTO) {
-        ItemDataDTO item = new ItemDataDTO();
-
-
-        return item;
+    public ItemDataCreatedDTO addItemToDB(ItemDataCreateDTO itemDataCreateDTO) {
+        //todo important is that we have to check does bardoce exist. if yes 403(fobidden)
+        //todo second task is check first does
+        return adminItemDetailDataManagerService.addNewEntery(itemDataCreateDTO);
     }
 }
