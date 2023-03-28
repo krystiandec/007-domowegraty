@@ -29,6 +29,6 @@ public class DataInitioalizer implements CommandLineRunner {
                 .build();
         System.out.println("Data item1:\n" + item1.toString());
         ItemDetailData itemSaved= repository.save(item1);
-        System.out.println("Data itemSaved"+itemSaved.toString());
+        System.out.println("Data itemSaved:\n"+itemSaved.toString());
     }
 }
