@@ -21,7 +21,7 @@ public class AdminItemDetailDataConrtoller {
         //todo: swagger do zrobienia
     ResponseEntity<?> saveItem(
 //            Pageable pageable,
-            @RequestParam(name = "name") ItemDataDTO itemDataDTO,
+            @RequestParam(name = "name") ItemDataDTO itemDataDTO
 //            @RequestParam(name = "item") @RequestBody @Non
             ) {
         return ResponseEntity.ok(itemDetailDataApi.addItemToDB(itemDataDTO));
