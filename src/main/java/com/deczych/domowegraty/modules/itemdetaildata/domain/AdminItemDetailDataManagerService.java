@@ -20,7 +20,7 @@ public class AdminItemDetailDataManagerService {
     public ItemDataCreatedDTO addNewEntery(ItemDataCreateDTO itemDataCreateDTO) {
         ItemDetailData entity = itemDetailDataMapper.transformToEntity(itemDataCreateDTO);
         entity.setCreationDate(Instant.now());
-        entity.setShortDescription("lalalala test");
+        entity.setShortDescription("lalalala test1");
         System.out.println(String.format("Jestem encją:%s",entity.toString()));
         repository.save(entity);
         ItemDataCreatedDTO savedEntity = itemDetailDataMapper.transformFromEntity(entity);
