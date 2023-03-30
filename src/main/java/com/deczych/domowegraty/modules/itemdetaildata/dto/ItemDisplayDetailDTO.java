@@ -11,15 +11,12 @@ import java.time.Instant;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class ItemDataCreatedDTO {
+public class ItemDisplayDetailDTO {
 
     long id;
     String productCode;
     BigDecimal price;
     BigDecimal weight;
-    Instant creationDate;
-    Instant modyficationDate;
-
     String shortDescription;
     String longDescription;
 

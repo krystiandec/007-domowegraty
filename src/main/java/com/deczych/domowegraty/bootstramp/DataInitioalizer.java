@@ -28,7 +28,9 @@ public class DataInitioalizer implements CommandLineRunner {
                 .productCode("598741231564")
                 .build();
         System.out.println("Data item1:\n" + item1.toString());
-        ItemDetailData itemSaved= repository.save(item1);
-        System.out.println("Data itemSaved:\n"+itemSaved.toString());
+        repository.save(item1);
+
+//        ItemDetailData itemSaved= repository.save(item1);
+//        System.out.println("Data itemSaved:\n"+itemSaved.toString());
     }
 }

@@ -2,6 +2,7 @@ package com.deczych.domowegraty.modules.itemdetaildata.domain;
 
 import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDataCreateDTO;
 import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDataCreatedDTO;
+import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDisplayDetailDTO;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,6 +26,17 @@ public class ItemDetailDataMapper {
                 .weight(entity.getWeight())
                 .creationDate(entity.getCreationDate())
                 .modyficationDate(entity.getModyficationDate())
+                .shortDescription(entity.getShortDescription())
+                .longDescription(entity.getLongDescription())
+                .build();
+    }
+
+    public ItemDisplayDetailDTO transformFromEntityToItemDisplayDetailDTO(ItemDetailData entity) {
+        return ItemDisplayDetailDTO.builder()
+                .id(entity.getId())
+                .productCode(entity.getProductCode())
+                .price(entity.getPrice())
+                .weight(entity.getWeight())
                 .shortDescription(entity.getShortDescription())
                 .longDescription(entity.getLongDescription())
                 .build();
