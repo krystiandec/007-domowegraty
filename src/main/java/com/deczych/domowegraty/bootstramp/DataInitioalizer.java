@@ -1,7 +1,7 @@
 package com.deczych.domowegraty.bootstramp;
 
-import com.deczych.domowegraty.modules.detaildata.domain.ItemDetailData;
-import com.deczych.domowegraty.modules.detaildata.domain.ItemDetailDataRepository;
+import com.deczych.domowegraty.modules.itemdetaildata.domain.ItemDetailData;
+import com.deczych.domowegraty.modules.itemdetaildata.domain.ItemDetailDataRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

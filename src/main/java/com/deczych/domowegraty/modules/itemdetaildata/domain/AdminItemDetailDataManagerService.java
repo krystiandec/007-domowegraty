@@ -1,7 +1,7 @@
-package com.deczych.domowegraty.modules.detaildata.domain;
+package com.deczych.domowegraty.modules.itemdetaildata.domain;
 
-import com.deczych.domowegraty.modules.detaildata.dto.ItemDataCreateDTO;
-import com.deczych.domowegraty.modules.detaildata.dto.ItemDataCreatedDTO;
+import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDataCreateDTO;
+import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDataCreatedDTO;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -18,7 +18,6 @@ public class AdminItemDetailDataManagerService {
     ItemDetailDataMapper itemDetailDataMapper;
 
     public ItemDataCreatedDTO addNewEntery(ItemDataCreateDTO itemDataCreateDTO) {
-        System.out.println(String.format("Jestem z %s:\n%s",this.getClass().getName(),itemDataCreateDTO.toString()));
         ItemDetailData entity = itemDetailDataMapper.transformToEntity(itemDataCreateDTO);
         entity.setCreationDate(Instant.now());
         entity.setShortDescription("lalalala test");

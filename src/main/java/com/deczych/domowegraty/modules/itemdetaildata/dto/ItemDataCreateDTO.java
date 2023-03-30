@@ -1,4 +1,4 @@
-package com.deczych.domowegraty.modules.detaildata.dto;
+package com.deczych.domowegraty.modules.itemdetaildata.dto;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.*;

@@ -1,7 +1,7 @@
-package com.deczych.domowegraty.modules.detaildata.domain;
+package com.deczych.domowegraty.modules.itemdetaildata.domain;
 
-import com.deczych.domowegraty.modules.detaildata.dto.ItemDataCreateDTO;
-import com.deczych.domowegraty.modules.detaildata.dto.ItemDataCreatedDTO;
+import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDataCreateDTO;
+import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDataCreatedDTO;
 import org.springframework.stereotype.Service;
 
 @Service

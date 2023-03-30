@@ -1,7 +1,7 @@
-package com.deczych.domowegraty.modules.detaildata.mvc;
+package com.deczych.domowegraty.modules.itemdetaildata.mvc;
 
-import com.deczych.domowegraty.modules.detaildata.domain.ItemDetailDataApi;
-import com.deczych.domowegraty.modules.detaildata.dto.ItemDataCreateDTO;
+import com.deczych.domowegraty.modules.itemdetaildata.domain.ItemDetailDataApi;
+import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDataCreateDTO;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;

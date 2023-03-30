@@ -1,4 +1,4 @@
-package com.deczych.domowegraty.modules.detaildata.domain;
+package com.deczych.domowegraty.modules.itemdetaildata.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;

@@ -1,4 +1,4 @@
-package com.deczych.domowegraty.modules.detaildata.domain;
+package com.deczych.domowegraty.modules.itemdetaildata.domain;
 
 import com.deczych.domowegraty.modules.pictures.domain.Photo;
 import jakarta.persistence.*;
@@ -23,7 +23,7 @@ public class ItemDetailData {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     Long id;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     String productCode;
     @Column(nullable = false)
     BigDecimal price;
