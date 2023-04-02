@@ -1,8 +1,10 @@
 package com.deczych.domowegraty.modules.itemdetaildata.domain;
 
+import com.deczych.domowegraty.infrastructure.exception.CustomizedRuntimeException;
 import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDataCreateDTO;
 import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDataCreatedDTO;
 import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDisplayDetailDTO;
+import com.deczych.domowegraty.utils.enums.ExceptionEnum;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -37,13 +39,13 @@ public class AdminItemDetailDataManagerService {
 
     public void deleteEntity(String productCode) {
         System.out.println("Przekazuje do repozytorium unikalny product code jaki ma byś usunięty...");
-        ItemDetailData entity = repository.findByProductCode(productCode).orElseThrow(()->new RuntimeException("Item Not Found"));
+        ItemDetailData entity = repository.findByProductCode(productCode).orElseThrow(()->new CustomizedRuntimeException(ExceptionEnum.ITEM_NOT_FOUND_BARCODE,productCode));
         repository.delete(entity);
         System.out.println("Entity Deleted.");
     }
 
     public ItemDisplayDetailDTO findEntityByProductCode(String productCode) {
-        ItemDetailData entity = repository.findByProductCode(productCode).orElseThrow(()->new RuntimeException("Item Not Found"));
+        ItemDetailData entity = repository.findByProductCode(productCode).orElseThrow(()->new CustomizedRuntimeException(ExceptionEnum.ITEM_NOT_FOUND_BARCODE,productCode));
         System.out.println(String.format("Jestem encją:%s", entity.toString()));
         ItemDisplayDetailDTO itemDisplayDetailDTO = itemDetailDataMapper.transformFromEntityToItemDisplayDetailDTO(entity);
         return itemDisplayDetailDTO;
