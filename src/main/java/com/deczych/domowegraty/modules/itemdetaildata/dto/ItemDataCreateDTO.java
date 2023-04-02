@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 public class ItemDataCreateDTO {
     @NotNull
-    String productCode;
+    Long productCode;
     @NotNull
     BigDecimal price;
     @NotNull

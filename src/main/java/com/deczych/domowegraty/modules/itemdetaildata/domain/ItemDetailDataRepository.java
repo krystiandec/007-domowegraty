@@ -13,7 +13,7 @@ public interface ItemDetailDataRepository extends Repository<ItemDetailData, Lon
 
     @Query("SELECT itemDetailData FROM ItemDetailData itemDetailData " +
             "WHERE itemDetailData.productCode=:productCode")
-    Optional<ItemDetailData> findByProductCode(@Param("productCode") String productCode);
+    Optional<ItemDetailData> findByProductCode(@Param("productCode") long productCode);
 
     void delete(ItemDetailData itemDetailData);
 

@@ -14,7 +14,7 @@ import java.time.Instant;
 public class ItemDisplayDetailDTO {
 
     long id;
-    String productCode;
+    long productCode;
     BigDecimal price;
     BigDecimal weight;
     String shortDescription;

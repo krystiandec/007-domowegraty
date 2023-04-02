@@ -24,7 +24,7 @@ public class ItemDetailData {
     @Column(name = "id", nullable = false)
     Long id;
     @Column(nullable = false, unique = true)
-    String productCode;
+    long productCode;
     @Column(nullable = false)
     BigDecimal price;
     @Column(nullable = false)

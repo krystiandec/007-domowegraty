@@ -25,7 +25,7 @@ public class DataInitioalizer implements CommandLineRunner {
                 .price(new BigDecimal(123.24))
                 .creationDate(Instant.now())
                 .weight(new BigDecimal(21))
-                .productCode("598741231564")
+                .productCode(598741231564l)
                 .build();
         System.out.println("Data item1:\n" + item1.toString());
         repository.save(item1);

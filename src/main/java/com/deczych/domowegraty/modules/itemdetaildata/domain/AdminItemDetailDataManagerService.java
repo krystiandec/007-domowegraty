@@ -37,14 +37,14 @@ public class AdminItemDetailDataManagerService {
         return savedEntity;
     }
 
-    public void deleteEntity(String productCode) {
+    public void deleteEntity(long productCode) {
         System.out.println("Przekazuje do repozytorium unikalny product code jaki ma byś usunięty...");
         ItemDetailData entity = repository.findByProductCode(productCode).orElseThrow(()->new CustomizedRuntimeException(ExceptionEnum.ITEM_NOT_FOUND_BARCODE,productCode));
         repository.delete(entity);
         System.out.println("Entity Deleted.");
     }
 
-    public ItemDisplayDetailDTO findEntityByProductCode(String productCode) {
+    public ItemDisplayDetailDTO findEntityByProductCode(long productCode) {
         ItemDetailData entity = repository.findByProductCode(productCode).orElseThrow(()->new CustomizedRuntimeException(ExceptionEnum.ITEM_NOT_FOUND_BARCODE,productCode));
         System.out.println(String.format("Jestem encją:%s", entity.toString()));
         ItemDisplayDetailDTO itemDisplayDetailDTO = itemDetailDataMapper.transformFromEntityToItemDisplayDetailDTO(entity);

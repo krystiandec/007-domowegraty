@@ -29,13 +29,13 @@ public class ItemDetailDataApi {
     }
 
     @Transactional(readOnly = true)
-    public ItemDisplayDetailDTO findItemByProductCode(String productCode) {
+    public ItemDisplayDetailDTO findItemByProductCode(long productCode) {
         System.out.println(String.format("Jestem z API, szukam encji o danym kodzie.%s",productCode));
         return adminItemDetailDataManagerService.findEntityByProductCode(productCode);
     }
 
     @Transactional
-    public void deleteItemWithProductCode(String productCode) {
+    public void deleteItemWithProductCode(long productCode) {
         System.out.println(String.format("Jestem z API, przekazuje do serwisu jaka encja ma być usunięta.%s",productCode));
         adminItemDetailDataManagerService.deleteEntity(productCode);
     }

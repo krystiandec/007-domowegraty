@@ -29,13 +29,13 @@ public class AdminItemDetailDataConrtoller {
     }
 
     @GetMapping("findByCode")
-    ResponseEntity<?> findItemDetailsByProductCode(@Valid @RequestParam String productCode){
+    ResponseEntity<?> findItemDetailsByProductCode(@Valid @RequestParam long productCode){
         System.out.println("Znajduję encje z bazy jak jest. kod:" + productCode);
         return ResponseEntity.ok(itemDetailDataApi.findItemByProductCode(productCode));
     }
 
     @DeleteMapping("deleteBycode")
-    ResponseEntity<?> deleteItem(@Valid @RequestParam String productCode){
+    ResponseEntity<?> deleteItem(@Valid @RequestParam long productCode){
         System.out.println("Usuwam encje z bazy jak jest. kod:" + productCode);
         itemDetailDataApi.deleteItemWithProductCode(productCode);
         return ResponseEntity.ok(String.format("done, item o numerze:%s usunięty",productCode));
