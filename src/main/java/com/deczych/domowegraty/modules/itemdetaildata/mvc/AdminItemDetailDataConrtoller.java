@@ -34,7 +34,7 @@ public class AdminItemDetailDataConrtoller {
         return ResponseEntity.ok(itemDetailDataApi.findItemByProductCode(productCode));
     }
 
-    @DeleteMapping("deleteBycode")
+    @DeleteMapping("deleteByCode")
     ResponseEntity<?> deleteItem(@Valid @RequestParam long productCode){
         System.out.println("Usuwam encje z bazy jak jest. kod:" + productCode);
         itemDetailDataApi.deleteItemWithProductCode(productCode);
