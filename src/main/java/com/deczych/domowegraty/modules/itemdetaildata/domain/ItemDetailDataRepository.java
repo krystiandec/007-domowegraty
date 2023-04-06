@@ -1,5 +1,7 @@
 package com.deczych.domowegraty.modules.itemdetaildata.domain;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.Repository;
@@ -16,5 +18,7 @@ public interface ItemDetailDataRepository extends Repository<ItemDetailData, Lon
     Optional<ItemDetailData> findByProductCode(@Param("productCode") long productCode);
 
     void delete(ItemDetailData itemDetailData);
+
+    Page<ItemDetailData> findAll(Pageable pageable);
 
 }

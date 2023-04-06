@@ -2,11 +2,14 @@ package com.deczych.domowegraty.modules.itemdetaildata.mvc;
 
 import com.deczych.domowegraty.modules.itemdetaildata.domain.ItemDetailDataApi;
 import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDataCreateDTO;
+import com.deczych.domowegraty.modules.itemdetaildata.dto.ItemDisplayDetailDTO;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,6 +36,12 @@ public class AdminItemDetailDataConrtoller {
         System.out.println("Znajduję encje z bazy jak jest. kod:" + productCode);
         return ResponseEntity.ok(itemDetailDataApi.findItemByProductCode(productCode));
     }
+
+    @GetMapping("findAllItems")
+    Page<ItemDisplayDetailDTO> findAllItemDetails(Pageable pageable) {
+        return itemDetailDataApi.findAllItemToDisplay(pageable);
+    }
+
 
     @DeleteMapping("deleteByCode")
     ResponseEntity<?> deleteItem(@Valid @RequestParam long productCode){

@@ -8,6 +8,8 @@ import com.deczych.domowegraty.utils.enums.ExceptionEnum;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -44,10 +46,18 @@ public class AdminItemDetailDataManagerService {
         System.out.println("Entity Deleted.");
     }
 
-    public ItemDisplayDetailDTO findEntityByProductCode(long productCode) {
+    public ItemDisplayDetailDTO getEntityByProductCode(long productCode) {
         ItemDetailData entity = repository.findByProductCode(productCode).orElseThrow(()->new CustomizedRuntimeException(ExceptionEnum.ITEM_NOT_FOUND_BARCODE,productCode));
         System.out.println(String.format("Jestem encją:%s", entity.toString()));
         ItemDisplayDetailDTO itemDisplayDetailDTO = itemDetailDataMapper.transformFromEntityToItemDisplayDetailDTO(entity);
         return itemDisplayDetailDTO;
+    }
+
+    public Page<ItemDisplayDetailDTO> getItemsDetailToDisplay(Pageable pageable) {
+        System.out.println("Jestem z getItemsDetailToDisplay");
+        Page<ItemDetailData> page = repository.findAll(pageable);
+        return page.map(itemDetailDataMapper::transformFromEntityToItemDisplayDetailDTO);
+
+
     }
 }
